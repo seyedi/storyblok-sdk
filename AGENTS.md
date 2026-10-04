@@ -12,10 +12,13 @@ There are companion guides deeper in the tree: one per language
 
 ## Project map
 
-**Targets** (1):
+**Targets** (4):
 
 | Target | Directory | Build guide |
 | --- | --- | --- |
+| `go` | `go/` | [`go/AGENTS.md`](./go/AGENTS.md) |
+| `js` | `js/` | [`js/AGENTS.md`](./js/AGENTS.md) |
+| `py` | `py/` | [`py/AGENTS.md`](./py/AGENTS.md) |
 | `ts` | `ts/` | [`ts/AGENTS.md`](./ts/AGENTS.md) |
 
 **Features** (1): `test`.

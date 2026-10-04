@@ -8,6 +8,9 @@
 # stored on disk or passed on the command line.
 #
 # Publication state (from the model):
+#   go       tag-only
+#   js       npm (publish pending: deploy publishes the git tag only) https://registry.npmjs.org
+#   py       pypi (publish pending: deploy publishes the git tag only) https://pypi.org
 #   ts       npm (publish pending: deploy publishes the git tag only) https://registry.npmjs.org
 #
 #   make deploy               list per-target deploy commands
@@ -26,10 +29,11 @@ SHELL := /bin/bash
 
 GITHUB_ALIAS ?= github
 NPM_ALIAS ?= npm
+PYPI_ALIAS ?= pypi
 
 BORU_DRY_RUN_FILLER := BORU-DRY-RUN-FILLER-NOT-A-REAL-SECRET
 
-TARGETS := ts
+TARGETS := go js py ts
 
 .PHONY: deploy deploy-dry \
   $(addprefix deploy-,$(TARGETS)) $(addprefix deploy-dry-,$(TARGETS)) \
@@ -39,11 +43,62 @@ deploy:
 	@echo "Deployment is per-target — pick one (each upload is irreversible):"
 	@echo "  make deploy-<target>    targets: $(TARGETS)"
 	@echo "Registry state is set in the model (.sdk/model/target/<t>.aontu):"
+	@echo "  deploy-go       tag-only"
+	@echo "  deploy-js       npm publish pending (deploy = git tag only)"
+	@echo "  deploy-py       pypi publish pending (deploy = git tag only)"
 	@echo "  deploy-ts       npm publish pending (deploy = git tag only)"
 	@echo "Rehearse everything safely first: make deploy-dry"
 
 deploy-dry: $(addprefix deploy-dry-,$(TARGETS))
 	@echo "deploy-dry: all targets rehearsed OK ($(TARGETS))"
+
+deploy-go:
+	boru vault exec --for=github=$(GITHUB_ALIAS) -- $(MAKE) -C go publish
+
+deploy-dry-go:
+	boru vault exec --dry-run --for=github=$(GITHUB_ALIAS) -- $(MAKE) -C go publish
+
+deploy-js:
+	@echo "deploy-js: npm publication is pending — publishing the git tag only."
+	boru vault exec --for=github=$(GITHUB_ALIAS) -- $(MAKE) tag-push-js
+
+deploy-dry-js:
+	boru vault exec --dry-run --for=github=$(GITHUB_ALIAS) -- $(MAKE) tag-push-js
+
+tag-push-js:
+	@set -e; tag="js/v0.0.1"; \
+	token="$${GITHUB_TOKEN:-$$GH_TOKEN}"; \
+	if [ "$$token" = "$(BORU_DRY_RUN_FILLER)" ]; then \
+	  echo "[dry-run] boru filler token detected: would create (if missing) and push tag $$tag; nothing pushed."; exit 0; fi; \
+	if [ -z "$$token" ]; then echo "tag-push-js: no GITHUB_TOKEN in env — run via make deploy-js (boru vault exec)"; exit 1; fi; \
+	if git rev-parse -q --verify "refs/tags/$$tag" >/dev/null; then \
+	  echo "tag $$tag already exists — pushing existing tag"; \
+	else git tag -a "$$tag" -m "Release $$tag"; fi; \
+	url=$$(git remote get-url origin | sed -E 's#^git@github.com:#https://github.com/#'); \
+	hdr="AUTHORIZATION: basic $$(printf 'x-access-token:%s' "$$token" | base64 | tr -d '\n')"; \
+	git -c http.extraheader="$$hdr" push "$$url" "$$tag"; \
+	echo "pushed $$tag (npm publication pending — tag-only deploy)"
+
+deploy-py:
+	@echo "deploy-py: pypi publication is pending — publishing the git tag only."
+	boru vault exec --for=github=$(GITHUB_ALIAS) -- $(MAKE) tag-push-py
+
+deploy-dry-py:
+	boru vault exec --dry-run --for=github=$(GITHUB_ALIAS) -- $(MAKE) tag-push-py
+
+tag-push-py:
+	@set -e; tag="py/v0.0.1"; \
+	token="$${GITHUB_TOKEN:-$$GH_TOKEN}"; \
+	if [ "$$token" = "$(BORU_DRY_RUN_FILLER)" ]; then \
+	  echo "[dry-run] boru filler token detected: would create (if missing) and push tag $$tag; nothing pushed."; exit 0; fi; \
+	if [ -z "$$token" ]; then echo "tag-push-py: no GITHUB_TOKEN in env — run via make deploy-py (boru vault exec)"; exit 1; fi; \
+	if git rev-parse -q --verify "refs/tags/$$tag" >/dev/null; then \
+	  echo "tag $$tag already exists — pushing existing tag"; \
+	else git tag -a "$$tag" -m "Release $$tag"; fi; \
+	url=$$(git remote get-url origin | sed -E 's#^git@github.com:#https://github.com/#'); \
+	hdr="AUTHORIZATION: basic $$(printf 'x-access-token:%s' "$$token" | base64 | tr -d '\n')"; \
+	git -c http.extraheader="$$hdr" push "$$url" "$$tag"; \
+	echo "pushed $$tag (pypi publication pending — tag-only deploy)"
 
 deploy-ts:
 	@echo "deploy-ts: npm publication is pending — publishing the git tag only."

@@ -267,6 +267,12 @@ initialiser
 [Vv]ectorise
 
 [Ss][Tt][Oo][Rr][Yy][Bb][Ll][Oo][Kk]-[Ss][Dd][Kk]
+[Gg][Oo]
+[Gg][Oo][Ll][Aa][Nn][Gg]
+[Jj][Ss]
+[Jj][Aa][Vv][Aa][Ss][Cc][Rr][Ii][Pp][Tt]
+[Pp][Yy]
+[Pp][Yy][Tt][Hh][Oo][Nn]
 [Tt][Ss]
 [Tt][Yy][Pp][Ee][Ss][Cc][Rr][Ii][Pp][Tt]
 [Aa][Ss][Ss][Ee][Tt]

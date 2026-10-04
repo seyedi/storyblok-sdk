@@ -10,6 +10,8 @@ This is an unofficial SDK for the Storyblok Content Delivery public API, generat
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
+> TypeScript, Python, Golang, JavaScript SDKs — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+
 > **Features:** `test` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
@@ -53,11 +55,41 @@ const space = await client.Space().load({ token: 'example_token' })
 console.log(space)
 ```
 
+### Python
+
+```python
+client = StoryblokSdkSDK.test()
+space = client.Space().load({"token": "example"})
+print(space)
+```
+
+### Golang
+
+```go
+client := sdk.Test()
+result, err := client.Space(nil).Load(
+    nil, nil,
+)
+```
+
+### JavaScript
+
+```js
+const client = StoryblokSdkSDK.test()
+const space = await client.Space().load({ token: 'example_token' })
+// space is the entity, populated with mock data
+// — call space.data() for the record itself
+console.log(space)
+```
+
 ## Packages
 
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/storyblok-sdk` | publish pending — [install from source](ts/README.md#install) |
+| Python | `voxgig-sdk-storyblok-sdk` | publish pending — [install from source](py/README.md#install) |
+| Golang | `github.com/voxgig-sdk/storyblok-sdk/go` | `go get github.com/voxgig-sdk/storyblok-sdk/go@latest` |
+| JavaScript | `@voxgig-sdk/storyblok-sdk-js` | publish pending — [install from source](js/README.md#install) |
 
 ## Quickstart
 
@@ -81,7 +113,7 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript) | `ts/` |
+| **SDK** (TypeScript, Python, Golang, JavaScript) | `ts/` `py/` `go/` `js/` |
 
 ## Entities
 
@@ -103,6 +135,52 @@ The API exposes 10 entities:
 The operations available across these entities are **load**, **list** — see each entity's
 own list above for exactly which it supports.
 
+## Quickstart in other languages
+
+### Python
+
+```python
+import os
+from storybloksdk_sdk import StoryblokSdkSDK
+
+client = StoryblokSdkSDK({
+    "apikey": os.environ.get("STORYBLOK_SDK_APIKEY"),
+})
+
+
+# Load a specific asset (returns the record, raises on error)
+asset = client.Asset().load({"filename": "example_filename", "token": "example_token"})
+print(asset)
+```
+
+### Golang
+
+```go
+import sdk "github.com/voxgig-sdk/storyblok-sdk/go"
+
+client := sdk.NewStoryblokSdkSDK(map[string]any{
+    "apikey": os.Getenv("STORYBLOK_SDK_APIKEY"),
+})
+
+// Load asset data
+asset, err := client.Asset(nil).Load(map[string]any{"filename": "example_filename", "token": "example_token"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(asset)
+```
+
+### JavaScript
+
+```js
+const { StoryblokSdkSDK } = require('@voxgig-sdk/storyblok-sdk-js')
+
+const client = new StoryblokSdkSDK({
+  apikey: process.env.STORYBLOK_SDK_APIKEY,
+})
+
+```
+
 ## Direct and prepare
 
 For endpoints the entity model doesn't cover, use the low-level methods:
@@ -121,6 +199,41 @@ When the entity interface does not cover an endpoint, use `direct`:
 
 **TypeScript:**
 ```ts
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example' },
+})
+if (result instanceof Error) {
+  throw result
+}
+console.log(result.data)
+```
+
+**Python:**
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example"},
+})
+```
+
+**Go:**
+```go
+result, err := client.Direct(map[string]any{
+    "path":   "/api/resource/{id}",
+    "method": "GET",
+    "params": map[string]any{"id": "example"},
+})
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+**JavaScript:**
+```js
 const result = await client.direct({
   path: '/api/resource/{id}',
   method: 'GET',
@@ -186,6 +299,9 @@ The full story: [voxgig.com/sdk/custom](https://voxgig.com/sdk/custom).
 ## Per-language documentation
 
 - [TypeScript](ts/README.md)
+- [Python](py/README.md)
+- [Golang](go/README.md)
+- [JavaScript](js/README.md)
 
 ## Upstream API
 

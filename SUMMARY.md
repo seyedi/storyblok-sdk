@@ -6,7 +6,7 @@ CDN endpoints for your Storyblok space
 
 This guide introduces the API, the client libraries, and the companion tools in this repository. Start with the API capabilities, choose a client for your application, and use the linked reference when you need exact request and response details.
 
-The selected API surface contains 10 entities and 14 HTTP routes. There are 1 SDK targets.
+The selected API surface contains 10 entities and 14 HTTP routes. There are 4 SDK targets.
 
 An entity groups related API operations. An operation can have several routes with different inputs or authentication requirements. The SDK exposes the entity and its operations using the conventions of the selected language.
 
@@ -197,6 +197,9 @@ Choose the language already used by your application or service. The clients rep
 
 | Client | Repository directory | Distribution |
 | --- | --- | --- |
+| Golang | `go/` | Build from source |
+| JavaScript | `js/` | Build from source |
+| Python | `py/` | Build from source |
 | TypeScript | `ts/` | Build from source |
 
 Build-from-source entries are not marked as published in the project model. Follow the build instructions in that target’s README, then consume the resulting package using your language’s local dependency mechanism. Published entries give the installation command recorded for that client.
