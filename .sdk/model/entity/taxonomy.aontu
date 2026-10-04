@@ -1,0 +1,264 @@
+# Entity: taxonomy
+
+main: kit: entity: taxonomy: {
+
+  alias: field: {}
+
+  fields: {
+    associated_content: {
+      h: "Associated Content"
+      n: "associated_content"
+      r: false
+      sh: "An array of story objects associated with the taxonomy."
+      t: "`$ARRAY`"
+    }
+    children: {
+      h: "Children"
+      n: "children"
+      r: false
+      sh: "An array of sub-terms objects."
+      t: "`$ARRAY`"
+    }
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "Creation timestamp."
+      t: "`$STRING`"
+    }
+    cv: {
+      h: "Cv"
+      n: "cv"
+      r: true
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "The taxonomy’s description."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: true
+      sh: "The taxonomy’s name."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The taxonomy’s ID."
+      t: "`$STRING`"
+    }
+    last_activity_at: {
+      fo: "date-time"
+      h: "Last Activity At"
+      n: "last_activity_at"
+      r: false
+      sh: "Latest update timestamp."
+      t: "`$STRING`"
+    }
+    last_author: {
+      h: "Last Author"
+      n: "last_author"
+      r: true
+      sh: "An object that contains the details of user who created the term."
+      t: [
+        "`$ONE`"
+        [
+          "`$OBJECT`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    last_author_id: {
+      h: "Last Author Id"
+      n: "last_author_id"
+      r: true
+      sh: "The user’s ID."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The taxonomy’s technical name."
+      t: "`$STRING`"
+    }
+    parent_id: {
+      h: "Parent Id"
+      n: "parent_id"
+      r: true
+      sh: "The top-level term’s ID."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    taxonomy: {
+      h: "Taxonomy"
+      n: "taxonomy"
+      r: true
+      sh: "An object that contains a taxonomy."
+      t: "`$OBJECT`"
+    }
+    terms_count: {
+      h: "Terms Count"
+      n: "terms_count"
+      r: false
+      sh: "The number sub-terms (at any depth)."
+      t: "`$INTEGER`"
+    }
+    updated_at: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updated_at"
+      r: true
+      sh: "Latest update timestamp."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "taxonomy"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/taxonomies"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/taxonomies"
+          q: {
+            exist: [
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "taxonomies"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.taxonomies`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/taxonomies/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "products"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/taxonomies/{id}"
+          q: {
+            exist: [
+              "id"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "taxonomies"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.taxonomy`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

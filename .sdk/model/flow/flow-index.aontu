@@ -1,0 +1,12 @@
+# Flows
+
+@"./BasicAssetFlow.aontu"
+@"./BasicDataSourceEntryFlow.aontu"
+@"./BasicDataSourceFlow.aontu"
+@"./BasicExperimentFlow.aontu"
+@"./BasicLinkFlow.aontu"
+@"./BasicSpaceFlow.aontu"
+@"./BasicStoryFlow.aontu"
+@"./BasicTagFlow.aontu"
+@"./BasicTaxonomyFlow.aontu"
+@"./BasicTaxonomyTermFlow.aontu"

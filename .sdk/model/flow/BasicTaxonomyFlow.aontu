@@ -1,0 +1,44 @@
+# BasicTaxonomyFlow
+
+main: kit: flow: BasicTaxonomyFlow:
+{
+  entity: "taxonomy",
+  kind: "basic",
+  name: "BasicTaxonomyFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "taxonomy_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "taxonomy_ref01",
+        srcdatavar: "taxonomy_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "taxonomy01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-taxonomy_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTaxonomyFlow"
+}

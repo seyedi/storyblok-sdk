@@ -1,0 +1,106 @@
+# Entity: taxonomy_term
+
+main: kit: entity: taxonomy_term: {
+
+  alias: field: {}
+
+  fields: {
+    cv: {
+      h: "Cv"
+      n: "cv"
+      r: true
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    taxonomy_term: {
+      h: "Taxonomy Term"
+      n: "taxonomy_term"
+      r: true
+      sh: "An object that contains a taxonomy."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "taxonomy_term"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/taxonomy_terms/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "200948619272229"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/taxonomy_terms/{id}"
+          q: {
+            exist: [
+              "id"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "taxonomy_terms"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.taxonomy_term`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,360 @@
+# Entity: link
+
+main: kit: entity: link: {
+
+  alias: field: {}
+
+  fields: {
+    alternates: {
+      h: "Alternates"
+      n: "alternates"
+      r: false
+      sh: "An array that contains objects correlating to the language versions defined using [field-level translation](https://www.storyblok.com/docs/concepts/internationalization#field-level-translation)."
+      t: "`$ARRAY`"
+    }
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: false
+      sh: "Creation timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Story or folder `id`."
+      t: "`$INTEGER`"
+    }
+    is_folder: {
+      h: "Is Folder"
+      n: "is_folder"
+      r: true
+      sh: "Returns `true` if the item is a folder."
+      t: "`$BOOLEAN`"
+    }
+    is_startpage: {
+      h: "Is Startpage"
+      n: "is_startpage"
+      r: true
+      sh: "Returns `true` if the story is the folder’s root."
+      t: "`$BOOLEAN`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Story or folder name."
+      t: "`$STRING`"
+    }
+    parent_id: {
+      h: "Parent Id"
+      n: "parent_id"
+      r: true
+      sh: "Parent folder ID."
+      t: "`$INTEGER`"
+    }
+    path: {
+      h: "Path"
+      n: "path"
+      r: false
+      sh: "Real path defined in the story’s entry configuration."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    position: {
+      h: "Position"
+      n: "position"
+      r: true
+      sh: "Numeric representation of the story’s position in the folder."
+      t: "`$INTEGER`"
+    }
+    published: {
+      h: "Published"
+      n: "published"
+      r: true
+      sh: "Returns `true` if the story is currently published."
+      t: "`$BOOLEAN`"
+    }
+    published_at: {
+      fo: "date-time"
+      h: "Published At"
+      n: "published_at"
+      r: false
+      sh: "Latest publication timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    real_path: {
+      h: "Real Path"
+      n: "real_path"
+      r: false
+      sh: "Either the full slug of the story or folder with a leading `/`, or the value of the real path defined in the story’s entry configuration with a leading `/`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    slug: {
+      h: "Slug"
+      n: "slug"
+      r: true
+      sh: "Story or folder full slug."
+      t: "`$STRING`"
+    }
+    updated_at: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updated_at"
+      r: false
+      sh: "Latest update timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    uuid: {
+      fo: "uuid"
+      h: "Uuid"
+      n: "uuid"
+      r: true
+      sh: "Story or folder `uuid`."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "link"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/links"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "a78b2116-c26d-4d23-9cbe-fec477847b0e"
+                k: "query"
+                n: "by_uuid"
+                or: "by_uuid"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "1"
+                k: "query"
+                n: "include_date"
+                or: "include_dates"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "0"
+                k: "query"
+                n: "paginated"
+                or: "paginated"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "de/beitraege"
+                k: "query"
+                n: "starts_with"
+                or: "starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0"
+                k: "query"
+                n: "with_parent"
+                or: "with_parent"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/links"
+          q: {
+            exist: [
+              "by_uuid"
+              "cv"
+              "include_date"
+              "page"
+              "paginated"
+              "per_page"
+              "starts_with"
+              "token"
+              "version"
+              "with_parent"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "links"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.links`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v2/cdn/links/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a78b2116-c26d-4d23-9cbe-fec477847b0e"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "1"
+                k: "query"
+                n: "include_date"
+                or: "include_dates"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/links/{id}"
+          q: {
+            exist: [
+              "cv"
+              "id"
+              "include_date"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "links"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.link`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

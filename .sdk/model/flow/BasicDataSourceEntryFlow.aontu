@@ -1,0 +1,22 @@
+# BasicDataSourceEntryFlow
+
+main: kit: flow: BasicDataSourceEntryFlow:
+{
+  entity: "data_source_entry",
+  kind: "basic",
+  name: "BasicDataSourceEntryFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "data_source_entry_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDataSourceEntryFlow"
+}

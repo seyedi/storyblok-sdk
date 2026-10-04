@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "taxonomy_term": {
+      "TAXONOMY_TERM00": {
+        "cv": "s1e",
+        "id": "TAXONOMY_TERM00",
+        "taxonomy_term": {}
+      },
+      "TAXONOMY_TERM01": {
+        "cv": "s3c",
+        "id": "TAXONOMY_TERM01",
+        "taxonomy_term": {}
+      },
+      "TAXONOMY_TERM02": {
+        "cv": "s5a",
+        "id": "TAXONOMY_TERM02",
+        "taxonomy_term": {}
+      }
+    }
+  },
+  "new": {
+    "taxonomy_term": {
+      "taxonomy_term_ref01": {
+        "cv": "s78",
+        "taxonomy_term": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/taxonomy_terms/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

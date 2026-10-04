@@ -1,0 +1,53 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "support@storyblok.com"
+        name: "Storyblok Support"
+        url: "https://support.storyblok.com"
+      }
+      description: "CDN endpoints for your Storyblok space"
+      license: {
+        name: "MIT"
+        url: "https://opensource.org/licenses/MIT"
+      }
+      security: {
+        in: "query"
+        name: "token"
+        prefix: ""
+        scheme: "ApiKeyAuth"
+        type: "apiKey"
+      }
+      servers: [
+        {
+          description: "European Union"
+          url: "https://api.storyblok.com"
+        }
+        {
+          description: "United States"
+          url: "https://api-us.storyblok.com"
+        }
+        {
+          description: "Canada"
+          url: "https://api-ca.storyblok.com"
+        }
+        {
+          description: "Australia"
+          url: "https://api-au.storyblok.com"
+        }
+        {
+          description: "China"
+          url: "https://app.storyblokchina.cn"
+        }
+      ]
+      summary: "CDN endpoints for your Storyblok space"
+      title: "Storyblok Content Delivery API"
+      version: "v2"
+      website: "https://www.storyblok.com/docs/api/content-delivery/v2"
+    }
+  }
+}
+

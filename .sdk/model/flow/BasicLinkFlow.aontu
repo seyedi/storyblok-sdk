@@ -1,0 +1,32 @@
+# BasicLinkFlow
+
+main: kit: flow: BasicLinkFlow:
+{
+  entity: "link",
+  kind: "basic",
+  name: "BasicLinkFlow",
+  step: [
+    {
+      i: {
+        ref: "link_ref01",
+        srcdatavar: "link_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "link01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-link_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLinkFlow"
+}

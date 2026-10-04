@@ -1,0 +1,263 @@
+# Entity: data_source
+
+main: kit: entity: data_source: {
+
+  alias: field: {}
+
+  fields: {
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: false
+      sh: "Creation timestamp."
+      t: "`$STRING`"
+    }
+    cv: {
+      h: "Cv"
+      n: "cv"
+      r: true
+      sh: "Cached version Unix timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    datasource: {
+      h: "Datasource"
+      n: "datasource"
+      r: true
+      sh: "A single data source object."
+      t: "`$OBJECT`"
+    }
+    dimensions: {
+      h: "Dimensions"
+      n: "dimensions"
+      r: true
+      sh: "An array listing the dimensions defined for the data source."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Data source ID."
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Data source name."
+      t: "`$STRING`"
+    }
+    slug: {
+      h: "Slug"
+      n: "slug"
+      r: true
+      sh: "Data source `slug`."
+      t: "`$STRING`"
+    }
+    updated_at: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updated_at"
+      r: false
+      sh: "Latest update timestamp."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "data_source"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/datasources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "12312,234234"
+                k: "query"
+                n: "by_id"
+                or: "by_ids"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "labels"
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/datasources"
+          q: {
+            exist: [
+              "by_id"
+              "cv"
+              "page"
+              "per_page"
+              "search"
+              "token"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "datasources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.datasources`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/datasources/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "labels"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/datasources/{id}"
+          q: {
+            exist: [
+              "cv"
+              "id"
+              "token"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "datasources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

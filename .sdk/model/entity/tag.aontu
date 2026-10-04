@@ -1,0 +1,109 @@
+# Entity: tag
+
+main: kit: entity: tag: {
+
+  alias: field: {}
+
+  fields: {
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The tag name."
+      t: "`$STRING`"
+    }
+    tag_on_stories: {
+      h: "Tag On Stories"
+      n: "tag_on_stories"
+      r: false
+      sh: "The number of distinct stories this tag appears on (only present when all_tags parameter is true)."
+      t: "`$INTEGER`"
+    }
+    taggings_count: {
+      h: "Taggings Count"
+      n: "taggings_count"
+      r: false
+      sh: "The number of stories that include this tag."
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "tag"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/tags"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "filter_query"
+                or: "filter_query"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                ex: "blog/posts"
+                k: "query"
+                n: "starts_with"
+                or: "starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/tags"
+          q: {
+            exist: [
+              "filter_query"
+              "starts_with"
+              "token"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "tags"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.tags`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

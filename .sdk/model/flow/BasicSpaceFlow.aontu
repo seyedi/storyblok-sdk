@@ -1,0 +1,28 @@
+# BasicSpaceFlow
+
+main: kit: flow: BasicSpaceFlow:
+{
+  entity: "space",
+  kind: "basic",
+  name: "BasicSpaceFlow",
+  step: [
+    {
+      i: {
+        ref: "space_ref01",
+        srcdatavar: "space_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-space_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSpaceFlow"
+}

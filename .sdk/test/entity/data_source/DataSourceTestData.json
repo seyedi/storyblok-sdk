@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "data_source": {
+      "DATA_SOURCE00": {
+        "created_at": "s50",
+        "cv": "s51",
+        "datasource": {},
+        "dimensions": [],
+        "id": "DATA_SOURCE00",
+        "name": "s55",
+        "slug": "s56",
+        "updated_at": "s57"
+      },
+      "DATA_SOURCE01": {
+        "created_at": "sa0",
+        "cv": "sa1",
+        "datasource": {},
+        "dimensions": [],
+        "id": "DATA_SOURCE01",
+        "name": "sa5",
+        "slug": "sa6",
+        "updated_at": "sa7"
+      },
+      "DATA_SOURCE02": {
+        "created_at": "sf0",
+        "cv": "sf1",
+        "datasource": {},
+        "dimensions": [],
+        "id": "DATA_SOURCE02",
+        "name": "sf5",
+        "slug": "sf6",
+        "updated_at": "sf7"
+      }
+    }
+  },
+  "new": {
+    "data_source": {
+      "data_source_ref01": {
+        "created_at": "s140",
+        "cv": "s141",
+        "datasource": {},
+        "dimensions": [],
+        "name": "s145",
+        "slug": "s146",
+        "updated_at": "s147"
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/datasources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v2/cdn/datasources/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

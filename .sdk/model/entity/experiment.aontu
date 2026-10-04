@@ -1,0 +1,111 @@
+# Entity: experiment
+
+main: kit: entity: experiment: {
+
+  alias: field: {}
+
+  fields: {
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: true
+      sh: "Human-readable display name."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Numeric ID of the experiment."
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Internal name (lowercase letters, numbers, and underscores)."
+      t: "`$STRING`"
+    }
+    story_ids: {
+      h: "Story Ids"
+      n: "story_ids"
+      r: true
+      sh: "IDs of [stories](https://www.storyblok.com/docs/api/content-delivery/v2/stories/the-story-object) assigned to the experiment."
+      t: "`$ARRAY`"
+    }
+    variants: {
+      h: "Variants"
+      n: "variants"
+      r: true
+      sh: "Variants belonging to the experiment."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "experiment"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/experiments"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/experiments"
+          q: {
+            exist: [
+              "cv"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "experiments"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.experiments`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

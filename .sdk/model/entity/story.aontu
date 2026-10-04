@@ -1,0 +1,698 @@
+# Entity: story
+
+main: kit: entity: story: {
+
+  alias: field: {}
+
+  fields: {
+    cv: {
+      h: "Cv"
+      n: "cv"
+      r: true
+      sh: "Cached version Unix timestamp."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    link_uuids: {
+      h: "Link Uuids"
+      n: "link_uuids"
+      r: false
+      sh: "An array of all linked stories’ UUIDs."
+      t: "`$ARRAY`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      sh: "An array of resolved links."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 1
+      }
+    }
+    rel_uuids: {
+      h: "Rel Uuids"
+      n: "rel_uuids"
+      r: false
+      sh: "An array of all referenced stories’ UUIDs."
+      t: "`$ARRAY`"
+    }
+    rels: {
+      h: "Rels"
+      n: "rels"
+      r: false
+      sh: "An array of resolved stories."
+      t: "`$ARRAY`"
+    }
+    stories: {
+      h: "Stories"
+      n: "stories"
+      r: true
+      sh: "An array of story objects."
+      t: "`$ARRAY`"
+    }
+    story: {
+      h: "Story"
+      n: "story"
+      r: true
+      sh: "The complete story object."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "story"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/stories"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "335015953,335015954"
+                k: "query"
+                n: "by_id"
+                or: "by_ids"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "posts/my-third-post,posts/my-second-post"
+                k: "query"
+                n: "by_slug"
+                or: "by_slugs"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "a78b2116-c26d-4d23-9cbe-fec477847b0e,9683820e-fc17-429e-ba23-eb41f26c0776"
+                k: "query"
+                n: "by_uuid"
+                or: "by_uuids"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "a78b2116-c26d-4d23-9cbe-fec477847b0e,9683820e-fc17-429e-ba23-eb41f26c0776"
+                k: "query"
+                n: "by_uuids_ordered"
+                or: "by_uuids_ordered"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "page"
+                k: "query"
+                n: "content_type"
+                or: "content_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1234
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "title,body"
+                k: "query"
+                n: "excluding_field"
+                or: "excluding_fields"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "335015953,335015954"
+                k: "query"
+                n: "excluding_id"
+                or: "excluding_ids"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "homepage"
+                k: "query"
+                n: "excluding_slug"
+                or: "excluding_slugs"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "alternates,translated_slugs"
+                k: "query"
+                n: "excluding_story_field"
+                or: "excluding_story_fields"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "de"
+                k: "query"
+                n: "fallback_lang"
+                or: "fallback_lang"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: {
+                  role: {
+                    in_array: [
+                      "marketer"
+                      "developer"
+                    ]
+                  }
+                }
+                k: "query"
+                n: "filter_query"
+                or: "filter_query"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "first_published_at_gt"
+                or: "first_published_at_gt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "first_published_at_gte"
+                or: "first_published_at_gte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "first_published_at_lt"
+                or: "first_published_at_lt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "first_published_at_lte"
+                or: "first_published_at_lte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "1"
+                k: "query"
+                n: "from_release"
+                or: "from_release"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "325604,325605"
+                k: "query"
+                n: "in_workflow_stage"
+                or: "in_workflow_stages"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "is_startpage"
+                or: "is_startpage"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "de"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "level"
+                or: "level"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "true"
+                k: "query"
+                n: "only_variant"
+                or: "only_variants"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "published_at_gt"
+                or: "published_at_gt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "published_at_gte"
+                or: "published_at_gte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "published_at_lt"
+                or: "published_at_lt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "published_at_lte"
+                or: "published_at_lte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "resolve_asset"
+                or: "resolve_assets"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 2
+                k: "query"
+                n: "resolve_level"
+                or: "resolve_level"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "story"
+                k: "query"
+                n: "resolve_link"
+                or: "resolve_links"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "resolve_links_level"
+                or: "resolve_links_level"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "page.author,page.categories"
+                k: "query"
+                n: "resolve_relation"
+                or: "resolve_relations"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "name"
+                k: "query"
+                n: "search_term"
+                or: "search_term"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "created_at:desc"
+                k: "query"
+                n: "sort_by"
+                or: "sort_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "blog/posts"
+                k: "query"
+                n: "starts_with"
+                or: "starts_with"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "updated_at_gt"
+                or: "updated_at_gt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "updated_at_gte"
+                or: "updated_at_gte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "updated_at_lt"
+                or: "updated_at_lt"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2025-07-16T08:00:00Z"
+                k: "query"
+                n: "updated_at_lte"
+                or: "updated_at_lte"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "featured"
+                k: "query"
+                n: "with_tag"
+                or: "with_tag"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/stories"
+          q: {
+            exist: [
+              "by_id"
+              "by_slug"
+              "by_uuid"
+              "by_uuids_ordered"
+              "content_type"
+              "cv"
+              "excluding_field"
+              "excluding_id"
+              "excluding_slug"
+              "excluding_story_field"
+              "fallback_lang"
+              "filter_query"
+              "first_published_at_gt"
+              "first_published_at_gte"
+              "first_published_at_lt"
+              "first_published_at_lte"
+              "from_release"
+              "in_workflow_stage"
+              "is_startpage"
+              "language"
+              "level"
+              "only_variant"
+              "page"
+              "per_page"
+              "published_at_gt"
+              "published_at_gte"
+              "published_at_lt"
+              "published_at_lte"
+              "resolve_asset"
+              "resolve_level"
+              "resolve_link"
+              "resolve_links_level"
+              "resolve_relation"
+              "search_term"
+              "sort_by"
+              "starts_with"
+              "token"
+              "updated_at_gt"
+              "updated_at_gte"
+              "updated_at_lt"
+              "updated_at_lte"
+              "version"
+              "with_tag"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "stories"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/stories/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "home"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "page"
+                k: "query"
+                n: "content_type"
+                or: "content_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1121
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "title,body"
+                k: "query"
+                n: "excluding_field"
+                or: "excluding_fields"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "alternates,translated_slugs"
+                k: "query"
+                n: "excluding_story_field"
+                or: "excluding_story_fields"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "de"
+                k: "query"
+                n: "fallback_lang"
+                or: "fallback_lang"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "uuid"
+                k: "query"
+                n: "find_by"
+                or: "find_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "1"
+                k: "query"
+                n: "from_release"
+                or: "from_release"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "de"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "resolve_asset"
+                or: "resolve_assets"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 2
+                k: "query"
+                n: "resolve_level"
+                or: "resolve_level"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "story"
+                k: "query"
+                n: "resolve_link"
+                or: "resolve_links"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "resolve_links_level"
+                or: "resolve_links_level"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "page.author,page.categories"
+                k: "query"
+                n: "resolve_relation"
+                or: "resolve_relations"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/stories/{id}"
+          q: {
+            exist: [
+              "content_type"
+              "cv"
+              "excluding_field"
+              "excluding_story_field"
+              "fallback_lang"
+              "find_by"
+              "from_release"
+              "id"
+              "language"
+              "resolve_asset"
+              "resolve_level"
+              "resolve_link"
+              "resolve_links_level"
+              "resolve_relation"
+              "token"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "stories"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.story`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

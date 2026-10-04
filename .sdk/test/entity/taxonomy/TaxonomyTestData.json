@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "taxonomy": {
+      "TAXONOMY00": {
+        "associated_content": [],
+        "children": [],
+        "created_at": "s98",
+        "cv": "s99",
+        "description": "s9a",
+        "display_name": "s9b",
+        "id": "TAXONOMY00",
+        "last_activity_at": "s9d",
+        "last_author": "s9e",
+        "last_author_id": "LAST_AUTHOR01",
+        "name": "sa0",
+        "parent_id": "PARENT01",
+        "taxonomy": {},
+        "terms_count": 163,
+        "updated_at": "sa4"
+      },
+      "TAXONOMY01": {
+        "associated_content": [],
+        "children": [],
+        "created_at": "s12e",
+        "cv": "s12f",
+        "description": "s130",
+        "display_name": "s131",
+        "id": "TAXONOMY01",
+        "last_activity_at": "s133",
+        "last_author": "s134",
+        "last_author_id": "LAST_AUTHOR01",
+        "name": "s136",
+        "parent_id": "PARENT01",
+        "taxonomy": {},
+        "terms_count": 313,
+        "updated_at": "s13a"
+      },
+      "TAXONOMY02": {
+        "associated_content": [],
+        "children": [],
+        "created_at": "s1c4",
+        "cv": "s1c5",
+        "description": "s1c6",
+        "display_name": "s1c7",
+        "id": "TAXONOMY02",
+        "last_activity_at": "s1c9",
+        "last_author": "s1ca",
+        "last_author_id": "LAST_AUTHOR01",
+        "name": "s1cc",
+        "parent_id": "PARENT01",
+        "taxonomy": {},
+        "terms_count": 463,
+        "updated_at": "s1d0"
+      }
+    }
+  },
+  "new": {
+    "taxonomy": {
+      "taxonomy_ref01": {
+        "associated_content": [],
+        "children": [],
+        "created_at": "s25a",
+        "cv": "s25b",
+        "description": "s25c",
+        "display_name": "s25d",
+        "last_activity_at": "s25f",
+        "last_author": "s260",
+        "last_author_id": "LAST_AUTHOR01",
+        "name": "s262",
+        "parent_id": "PARENT01",
+        "taxonomy": {},
+        "terms_count": 613,
+        "updated_at": "s266"
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/taxonomies": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v2/cdn/taxonomies/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "experiment": {
+      "EXPERIMENT00": {
+        "display_name": "s32",
+        "id": "EXPERIMENT00",
+        "name": "s34",
+        "story_ids": [],
+        "variants": []
+      },
+      "EXPERIMENT01": {
+        "display_name": "s64",
+        "id": "EXPERIMENT01",
+        "name": "s66",
+        "story_ids": [],
+        "variants": []
+      },
+      "EXPERIMENT02": {
+        "display_name": "s96",
+        "id": "EXPERIMENT02",
+        "name": "s98",
+        "story_ids": [],
+        "variants": []
+      }
+    }
+  },
+  "new": {
+    "experiment": {
+      "experiment_ref01": {
+        "display_name": "sc8",
+        "name": "sca",
+        "story_ids": [],
+        "variants": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/experiments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

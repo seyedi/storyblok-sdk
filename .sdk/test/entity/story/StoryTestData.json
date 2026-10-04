@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "story": {
+      "STORY00": {
+        "cv": 80,
+        "id": "STORY00",
+        "link_uuids": [],
+        "links": [],
+        "rel_uuids": [],
+        "rels": [],
+        "stories": [],
+        "story": "s57"
+      },
+      "STORY01": {
+        "cv": 160,
+        "id": "STORY01",
+        "link_uuids": [],
+        "links": [],
+        "rel_uuids": [],
+        "rels": [],
+        "stories": [],
+        "story": "sa7"
+      },
+      "STORY02": {
+        "cv": 240,
+        "id": "STORY02",
+        "link_uuids": [],
+        "links": [],
+        "rel_uuids": [],
+        "rels": [],
+        "stories": [],
+        "story": "sf7"
+      }
+    }
+  },
+  "new": {
+    "story": {
+      "story_ref01": {
+        "cv": 320,
+        "link_uuids": [],
+        "links": [],
+        "rel_uuids": [],
+        "rels": [],
+        "stories": [],
+        "story": "s147"
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/stories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v2/cdn/stories/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

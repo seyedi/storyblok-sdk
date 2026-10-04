@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "space": {
+      "SPACE00": {
+        "domain": "s32",
+        "id": "SPACE00",
+        "language_codes": [],
+        "name": "s35",
+        "version": 54
+      },
+      "SPACE01": {
+        "domain": "s64",
+        "id": "SPACE01",
+        "language_codes": [],
+        "name": "s67",
+        "version": 104
+      },
+      "SPACE02": {
+        "domain": "s96",
+        "id": "SPACE02",
+        "language_codes": [],
+        "name": "s99",
+        "version": 154
+      }
+    }
+  },
+  "new": {
+    "space": {
+      "space_ref01": {
+        "domain": "sc8",
+        "language_codes": [],
+        "name": "scb",
+        "version": 204
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/spaces/me": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

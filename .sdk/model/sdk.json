@@ -1,0 +1,3371 @@
+{
+  "def": "cdn-v2.openapi.yaml",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": false,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "asset": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "alt": {
+              "a": true,
+              "h": "Alt",
+              "n": "alt",
+              "r": true,
+              "sh": "Alt text for the asset (default language).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "asset_folder_id": {
+              "a": true,
+              "h": "Asset Folder Id",
+              "n": "asset_folder_id",
+              "r": true,
+              "sh": "Id of the folder that contains this asset.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content_length": {
+              "a": true,
+              "h": "Content Length",
+              "n": "content_length",
+              "r": true,
+              "sh": "The content length in bytes.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content_type": {
+              "a": true,
+              "h": "Content Type",
+              "n": "content_type",
+              "r": true,
+              "sh": "The asset’s MIME type.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "copyright": {
+              "a": true,
+              "h": "Copyright",
+              "n": "copyright",
+              "r": true,
+              "sh": "Copyright text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "created_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Created At",
+              "n": "created_at",
+              "r": true,
+              "sh": "Creation timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "expire_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Expire At",
+              "n": "expire_at",
+              "r": true,
+              "sh": "Expiration timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "filename": {
+              "a": true,
+              "h": "Filename",
+              "n": "filename",
+              "r": true,
+              "sh": "Full path of the asset, including the file name.",
+              "t": "`$STRING`"
+            },
+            "focus": {
+              "a": true,
+              "h": "Focus",
+              "n": "focus",
+              "r": true,
+              "sh": "Focus.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "is_private": {
+              "a": true,
+              "h": "Is Private",
+              "n": "is_private",
+              "r": true,
+              "sh": "Defines if the asset should be inaccessible to the public.",
+              "t": "`$BOOLEAN`"
+            },
+            "signed_url": {
+              "a": true,
+              "h": "Signed Url",
+              "n": "signed_url",
+              "r": false,
+              "sh": "The signed URL for the asset.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Title of the asset.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "updated_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": true,
+              "sh": "Latest update timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "asset",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/assets/me",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "filename",
+                        "k": "query",
+                        "n": "filename",
+                        "or": "filename",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/assets/me",
+                  "q": {
+                    "$action": "me",
+                    "exist": [
+                      "filename",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "assets"
+                    },
+                    {
+                      "lit": "me"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.asset`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "data_source": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "created_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "Creation timestamp.",
+              "t": "`$STRING`"
+            },
+            "cv": {
+              "a": true,
+              "h": "Cv",
+              "n": "cv",
+              "r": true,
+              "sh": "Cached version Unix timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "datasource": {
+              "a": true,
+              "h": "Datasource",
+              "n": "datasource",
+              "r": true,
+              "sh": "A single data source object.",
+              "t": "`$OBJECT`"
+            },
+            "dimensions": {
+              "a": true,
+              "h": "Dimensions",
+              "n": "dimensions",
+              "r": true,
+              "sh": "An array listing the dimensions defined for the data source.",
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Data source ID.",
+              "t": "`$INTEGER`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Data source name.",
+              "t": "`$STRING`"
+            },
+            "slug": {
+              "a": true,
+              "h": "Slug",
+              "n": "slug",
+              "r": true,
+              "sh": "Data source `slug`.",
+              "t": "`$STRING`"
+            },
+            "updated_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "Latest update timestamp.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "data_source",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/datasources",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "12312,234234",
+                        "k": "query",
+                        "n": "by_id",
+                        "or": "by_ids",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "labels",
+                        "k": "query",
+                        "n": "search",
+                        "or": "search",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/datasources",
+                  "q": {
+                    "exist": [
+                      "by_id",
+                      "cv",
+                      "page",
+                      "per_page",
+                      "search",
+                      "token",
+                      "version"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "datasources"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.datasources`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/datasources/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "labels",
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/datasources/{id}",
+                  "q": {
+                    "exist": [
+                      "cv",
+                      "id",
+                      "token",
+                      "version"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "datasources"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "data_source_entry": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "dimension_value": {
+              "a": true,
+              "h": "Dimension Value",
+              "n": "dimension_value",
+              "r": true,
+              "sh": "Entry value (requested dimension).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Entry ID.",
+              "t": "`$INTEGER`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Entry name.",
+              "t": "`$STRING`"
+            },
+            "value": {
+              "a": true,
+              "h": "Value",
+              "n": "value",
+              "r": true,
+              "sh": "Entry value (default dimension).",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "data_source_entry",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/datasource_entries",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "labels",
+                        "k": "query",
+                        "n": "datasource",
+                        "or": "datasource",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "dimension",
+                        "or": "dimension",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/datasource_entries",
+                  "q": {
+                    "exist": [
+                      "cv",
+                      "datasource",
+                      "dimension",
+                      "page",
+                      "per_page",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "datasource_entries"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.datasource_entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "experiment": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "display_name": {
+              "a": true,
+              "h": "Display Name",
+              "n": "display_name",
+              "r": true,
+              "sh": "Human-readable display name.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Numeric ID of the experiment.",
+              "t": "`$INTEGER`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Internal name (lowercase letters, numbers, and underscores).",
+              "t": "`$STRING`"
+            },
+            "story_ids": {
+              "a": true,
+              "h": "Story Ids",
+              "n": "story_ids",
+              "r": true,
+              "sh": "IDs of [stories](https://www.storyblok.com/docs/api/content-delivery/v2/stories/the-story-object) assigned to the experiment.",
+              "t": "`$ARRAY`"
+            },
+            "variants": {
+              "a": true,
+              "h": "Variants",
+              "n": "variants",
+              "r": true,
+              "sh": "Variants belonging to the experiment.",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "experiment",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/experiments",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/experiments",
+                  "q": {
+                    "exist": [
+                      "cv",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "experiments"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.experiments`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "link": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "alternates": {
+              "a": true,
+              "h": "Alternates",
+              "n": "alternates",
+              "r": false,
+              "sh": "An array that contains objects correlating to the language versions defined using [field-level translation](https://www.storyblok.com/docs/concepts/internationalization#field-level-translation).",
+              "t": "`$ARRAY`"
+            },
+            "created_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "Creation timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Story or folder `id`.",
+              "t": "`$INTEGER`"
+            },
+            "is_folder": {
+              "a": true,
+              "h": "Is Folder",
+              "n": "is_folder",
+              "r": true,
+              "sh": "Returns `true` if the item is a folder.",
+              "t": "`$BOOLEAN`"
+            },
+            "is_startpage": {
+              "a": true,
+              "h": "Is Startpage",
+              "n": "is_startpage",
+              "r": true,
+              "sh": "Returns `true` if the story is the folder’s root.",
+              "t": "`$BOOLEAN`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Story or folder name.",
+              "t": "`$STRING`"
+            },
+            "parent_id": {
+              "a": true,
+              "h": "Parent Id",
+              "n": "parent_id",
+              "r": true,
+              "sh": "Parent folder ID.",
+              "t": "`$INTEGER`"
+            },
+            "path": {
+              "a": true,
+              "h": "Path",
+              "n": "path",
+              "r": false,
+              "sh": "Real path defined in the story’s entry configuration.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "position": {
+              "a": true,
+              "h": "Position",
+              "n": "position",
+              "r": true,
+              "sh": "Numeric representation of the story’s position in the folder.",
+              "t": "`$INTEGER`"
+            },
+            "published": {
+              "a": true,
+              "h": "Published",
+              "n": "published",
+              "r": true,
+              "sh": "Returns `true` if the story is currently published.",
+              "t": "`$BOOLEAN`"
+            },
+            "published_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "published_at",
+              "r": false,
+              "sh": "Latest publication timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "real_path": {
+              "a": true,
+              "h": "Real Path",
+              "n": "real_path",
+              "r": false,
+              "sh": "Either the full slug of the story or folder with a leading `/`, or the value of the real path defined in the story’s entry configuration with a leading `/`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "slug": {
+              "a": true,
+              "h": "Slug",
+              "n": "slug",
+              "r": true,
+              "sh": "Story or folder full slug.",
+              "t": "`$STRING`"
+            },
+            "updated_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "Latest update timestamp.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "uuid": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Uuid",
+              "n": "uuid",
+              "r": true,
+              "sh": "Story or folder `uuid`.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "link",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/links",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "a78b2116-c26d-4d23-9cbe-fec477847b0e",
+                        "k": "query",
+                        "n": "by_uuid",
+                        "or": "by_uuid",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1",
+                        "k": "query",
+                        "n": "include_date",
+                        "or": "include_dates",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "0",
+                        "k": "query",
+                        "n": "paginated",
+                        "or": "paginated",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "de/beitraege",
+                        "k": "query",
+                        "n": "starts_with",
+                        "or": "starts_with",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "0",
+                        "k": "query",
+                        "n": "with_parent",
+                        "or": "with_parent",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/links",
+                  "q": {
+                    "exist": [
+                      "by_uuid",
+                      "cv",
+                      "include_date",
+                      "page",
+                      "paginated",
+                      "per_page",
+                      "starts_with",
+                      "token",
+                      "version",
+                      "with_parent"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "links"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.links`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/links/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "a78b2116-c26d-4d23-9cbe-fec477847b0e",
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 1541863983,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1",
+                        "k": "query",
+                        "n": "include_date",
+                        "or": "include_dates",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/links/{id}",
+                  "q": {
+                    "exist": [
+                      "cv",
+                      "id",
+                      "include_date",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "links"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.link`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "space": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "domain": {
+              "a": true,
+              "h": "Domain",
+              "n": "domain",
+              "r": true,
+              "sh": "Domain associated with the space (configured under **Visual Editor** → **Location**).",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Space ID.",
+              "t": "`$INTEGER`"
+            },
+            "language_codes": {
+              "a": true,
+              "h": "Language Codes",
+              "n": "language_codes",
+              "r": true,
+              "sh": "An array of language codes configured in the space.",
+              "t": "`$ARRAY`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Space name.",
+              "t": "`$STRING`"
+            },
+            "version": {
+              "a": true,
+              "h": "Version",
+              "n": "version",
+              "r": true,
+              "sh": "Cached version Unix timestamp.",
+              "t": "`$INTEGER`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "space",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/spaces/me",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/spaces/me",
+                  "q": {
+                    "$action": "me",
+                    "exist": [
+                      "token",
+                      "version"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "lit": "me"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.space`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "story": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "cv": {
+              "a": true,
+              "h": "Cv",
+              "n": "cv",
+              "r": true,
+              "sh": "Cached version Unix timestamp.",
+              "t": "`$INTEGER`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "link_uuids": {
+              "a": true,
+              "h": "Link Uuids",
+              "n": "link_uuids",
+              "r": false,
+              "sh": "An array of all linked stories’ UUIDs.",
+              "t": "`$ARRAY`"
+            },
+            "links": {
+              "a": true,
+              "h": "Links",
+              "n": "links",
+              "r": false,
+              "sh": "An array of resolved links.",
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 3,
+                "count": 1,
+                "depth": 1
+              }
+            },
+            "rel_uuids": {
+              "a": true,
+              "h": "Rel Uuids",
+              "n": "rel_uuids",
+              "r": false,
+              "sh": "An array of all referenced stories’ UUIDs.",
+              "t": "`$ARRAY`"
+            },
+            "rels": {
+              "a": true,
+              "h": "Rels",
+              "n": "rels",
+              "r": false,
+              "sh": "An array of resolved stories.",
+              "t": "`$ARRAY`"
+            },
+            "stories": {
+              "a": true,
+              "h": "Stories",
+              "n": "stories",
+              "r": true,
+              "sh": "An array of story objects.",
+              "t": "`$ARRAY`"
+            },
+            "story": {
+              "a": true,
+              "h": "Story",
+              "n": "story",
+              "r": true,
+              "sh": "The complete story object.",
+              "t": "`$ANY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "story",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/stories",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "335015953,335015954",
+                        "k": "query",
+                        "n": "by_id",
+                        "or": "by_ids",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "posts/my-third-post,posts/my-second-post",
+                        "k": "query",
+                        "n": "by_slug",
+                        "or": "by_slugs",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "a78b2116-c26d-4d23-9cbe-fec477847b0e,9683820e-fc17-429e-ba23-eb41f26c0776",
+                        "k": "query",
+                        "n": "by_uuid",
+                        "or": "by_uuids",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "a78b2116-c26d-4d23-9cbe-fec477847b0e,9683820e-fc17-429e-ba23-eb41f26c0776",
+                        "k": "query",
+                        "n": "by_uuids_ordered",
+                        "or": "by_uuids_ordered",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "page",
+                        "k": "query",
+                        "n": "content_type",
+                        "or": "content_type",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1234,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "title,body",
+                        "k": "query",
+                        "n": "excluding_field",
+                        "or": "excluding_fields",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "335015953,335015954",
+                        "k": "query",
+                        "n": "excluding_id",
+                        "or": "excluding_ids",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "homepage",
+                        "k": "query",
+                        "n": "excluding_slug",
+                        "or": "excluding_slugs",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "alternates,translated_slugs",
+                        "k": "query",
+                        "n": "excluding_story_field",
+                        "or": "excluding_story_fields",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "de",
+                        "k": "query",
+                        "n": "fallback_lang",
+                        "or": "fallback_lang",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": {
+                          "role": {
+                            "in_array": [
+                              "marketer",
+                              "developer"
+                            ]
+                          }
+                        },
+                        "k": "query",
+                        "n": "filter_query",
+                        "or": "filter_query",
+                        "r": false,
+                        "t": "`$OBJECT`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "first_published_at_gt",
+                        "or": "first_published_at_gt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "first_published_at_gte",
+                        "or": "first_published_at_gte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "first_published_at_lt",
+                        "or": "first_published_at_lt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "first_published_at_lte",
+                        "or": "first_published_at_lte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1",
+                        "k": "query",
+                        "n": "from_release",
+                        "or": "from_release",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "325604,325605",
+                        "k": "query",
+                        "n": "in_workflow_stage",
+                        "or": "in_workflow_stages",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "is_startpage",
+                        "or": "is_startpage",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "de",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "level",
+                        "or": "level",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "true",
+                        "k": "query",
+                        "n": "only_variant",
+                        "or": "only_variants",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "published_at_gt",
+                        "or": "published_at_gt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "published_at_gte",
+                        "or": "published_at_gte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "published_at_lt",
+                        "or": "published_at_lt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "published_at_lte",
+                        "or": "published_at_lte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "resolve_asset",
+                        "or": "resolve_assets",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 2,
+                        "k": "query",
+                        "n": "resolve_level",
+                        "or": "resolve_level",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "story",
+                        "k": "query",
+                        "n": "resolve_link",
+                        "or": "resolve_links",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "resolve_links_level",
+                        "or": "resolve_links_level",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "page.author,page.categories",
+                        "k": "query",
+                        "n": "resolve_relation",
+                        "or": "resolve_relations",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "name",
+                        "k": "query",
+                        "n": "search_term",
+                        "or": "search_term",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "created_at:desc",
+                        "k": "query",
+                        "n": "sort_by",
+                        "or": "sort_by",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "blog/posts",
+                        "k": "query",
+                        "n": "starts_with",
+                        "or": "starts_with",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "updated_at_gt",
+                        "or": "updated_at_gt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "updated_at_gte",
+                        "or": "updated_at_gte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "updated_at_lt",
+                        "or": "updated_at_lt",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2025-07-16T08:00:00Z",
+                        "k": "query",
+                        "n": "updated_at_lte",
+                        "or": "updated_at_lte",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "featured",
+                        "k": "query",
+                        "n": "with_tag",
+                        "or": "with_tag",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/stories",
+                  "q": {
+                    "exist": [
+                      "by_id",
+                      "by_slug",
+                      "by_uuid",
+                      "by_uuids_ordered",
+                      "content_type",
+                      "cv",
+                      "excluding_field",
+                      "excluding_id",
+                      "excluding_slug",
+                      "excluding_story_field",
+                      "fallback_lang",
+                      "filter_query",
+                      "first_published_at_gt",
+                      "first_published_at_gte",
+                      "first_published_at_lt",
+                      "first_published_at_lte",
+                      "from_release",
+                      "in_workflow_stage",
+                      "is_startpage",
+                      "language",
+                      "level",
+                      "only_variant",
+                      "page",
+                      "per_page",
+                      "published_at_gt",
+                      "published_at_gte",
+                      "published_at_lt",
+                      "published_at_lte",
+                      "resolve_asset",
+                      "resolve_level",
+                      "resolve_link",
+                      "resolve_links_level",
+                      "resolve_relation",
+                      "search_term",
+                      "sort_by",
+                      "starts_with",
+                      "token",
+                      "updated_at_gt",
+                      "updated_at_gte",
+                      "updated_at_lt",
+                      "updated_at_lte",
+                      "version",
+                      "with_tag"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "stories"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/stories/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "home",
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "page",
+                        "k": "query",
+                        "n": "content_type",
+                        "or": "content_type",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1121,
+                        "k": "query",
+                        "n": "cv",
+                        "or": "cv",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "title,body",
+                        "k": "query",
+                        "n": "excluding_field",
+                        "or": "excluding_fields",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "alternates,translated_slugs",
+                        "k": "query",
+                        "n": "excluding_story_field",
+                        "or": "excluding_story_fields",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "de",
+                        "k": "query",
+                        "n": "fallback_lang",
+                        "or": "fallback_lang",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "uuid",
+                        "k": "query",
+                        "n": "find_by",
+                        "or": "find_by",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1",
+                        "k": "query",
+                        "n": "from_release",
+                        "or": "from_release",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "de",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "resolve_asset",
+                        "or": "resolve_assets",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 2,
+                        "k": "query",
+                        "n": "resolve_level",
+                        "or": "resolve_level",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "story",
+                        "k": "query",
+                        "n": "resolve_link",
+                        "or": "resolve_links",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "resolve_links_level",
+                        "or": "resolve_links_level",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "page.author,page.categories",
+                        "k": "query",
+                        "n": "resolve_relation",
+                        "or": "resolve_relations",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/stories/{id}",
+                  "q": {
+                    "exist": [
+                      "content_type",
+                      "cv",
+                      "excluding_field",
+                      "excluding_story_field",
+                      "fallback_lang",
+                      "find_by",
+                      "from_release",
+                      "id",
+                      "language",
+                      "resolve_asset",
+                      "resolve_level",
+                      "resolve_link",
+                      "resolve_links_level",
+                      "resolve_relation",
+                      "token",
+                      "version"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "stories"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.story`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "tag": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "The tag name.",
+              "t": "`$STRING`"
+            },
+            "tag_on_stories": {
+              "a": true,
+              "h": "Tag On Stories",
+              "n": "tag_on_stories",
+              "r": false,
+              "sh": "The number of distinct stories this tag appears on (only present when all_tags parameter is true).",
+              "t": "`$INTEGER`"
+            },
+            "taggings_count": {
+              "a": true,
+              "h": "Taggings Count",
+              "n": "taggings_count",
+              "r": false,
+              "sh": "The number of stories that include this tag.",
+              "t": "`$INTEGER`"
+            }
+          },
+          "name": "tag",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "filter_query",
+                        "or": "filter_query",
+                        "r": false,
+                        "t": "`$OBJECT`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "blog/posts",
+                        "k": "query",
+                        "n": "starts_with",
+                        "or": "starts_with",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "published",
+                        "k": "query",
+                        "n": "version",
+                        "or": "version",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/tags",
+                  "q": {
+                    "exist": [
+                      "filter_query",
+                      "starts_with",
+                      "token",
+                      "version"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.tags`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "taxonomy": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "associated_content": {
+              "a": true,
+              "h": "Associated Content",
+              "n": "associated_content",
+              "r": false,
+              "sh": "An array of story objects associated with the taxonomy.",
+              "t": "`$ARRAY`"
+            },
+            "children": {
+              "a": true,
+              "h": "Children",
+              "n": "children",
+              "r": false,
+              "sh": "An array of sub-terms objects.",
+              "t": "`$ARRAY`"
+            },
+            "created_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Created At",
+              "n": "created_at",
+              "r": true,
+              "sh": "Creation timestamp.",
+              "t": "`$STRING`"
+            },
+            "cv": {
+              "a": true,
+              "h": "Cv",
+              "n": "cv",
+              "r": true,
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": true,
+              "sh": "The taxonomy’s description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "display_name": {
+              "a": true,
+              "h": "Display Name",
+              "n": "display_name",
+              "r": true,
+              "sh": "The taxonomy’s name.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "The taxonomy’s ID.",
+              "t": "`$STRING`"
+            },
+            "last_activity_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Last Activity At",
+              "n": "last_activity_at",
+              "r": false,
+              "sh": "Latest update timestamp.",
+              "t": "`$STRING`"
+            },
+            "last_author": {
+              "a": true,
+              "h": "Last Author",
+              "n": "last_author",
+              "r": true,
+              "sh": "An object that contains the details of user who created the term.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$OBJECT`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "last_author_id": {
+              "a": true,
+              "h": "Last Author Id",
+              "n": "last_author_id",
+              "r": true,
+              "sh": "The user’s ID.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "The taxonomy’s technical name.",
+              "t": "`$STRING`"
+            },
+            "parent_id": {
+              "a": true,
+              "h": "Parent Id",
+              "n": "parent_id",
+              "r": true,
+              "sh": "The top-level term’s ID.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "taxonomy": {
+              "a": true,
+              "h": "Taxonomy",
+              "n": "taxonomy",
+              "r": true,
+              "sh": "An object that contains a taxonomy.",
+              "t": "`$OBJECT`"
+            },
+            "terms_count": {
+              "a": true,
+              "h": "Terms Count",
+              "n": "terms_count",
+              "r": false,
+              "sh": "The number sub-terms (at any depth).",
+              "t": "`$INTEGER`"
+            },
+            "updated_at": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": true,
+              "sh": "Latest update timestamp.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "taxonomy",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/taxonomies",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/taxonomies",
+                  "q": {
+                    "exist": [
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "taxonomies"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.taxonomies`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/taxonomies/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "products",
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/taxonomies/{id}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "taxonomies"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.taxonomy`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "taxonomy_term": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "cv": {
+              "a": true,
+              "h": "Cv",
+              "n": "cv",
+              "r": true,
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "taxonomy_term": {
+              "a": true,
+              "h": "Taxonomy Term",
+              "n": "taxonomy_term",
+              "r": true,
+              "sh": "An object that contains a taxonomy.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "taxonomy_term",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v2/cdn/taxonomy_terms/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "200948619272229",
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "ask9soUkv02QqbZgmZdeDAtt",
+                        "k": "query",
+                        "n": "token",
+                        "or": "token",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v2/cdn/taxonomy_terms/{id}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "token"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "cdn"
+                    },
+                    {
+                      "lit": "taxonomy_terms"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.taxonomy_term`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicAssetFlow": {
+          "active": true,
+          "entity": "asset",
+          "key$": "BasicAssetFlow",
+          "kind": "basic",
+          "name": "BasicAssetFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "asset_ref01",
+                "srcdatavar": "asset_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-asset_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicDataSourceEntryFlow": {
+          "active": true,
+          "entity": "data_source_entry",
+          "key$": "BasicDataSourceEntryFlow",
+          "kind": "basic",
+          "name": "BasicDataSourceEntryFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "data_source_entry_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicDataSourceFlow": {
+          "active": true,
+          "entity": "data_source",
+          "key$": "BasicDataSourceFlow",
+          "kind": "basic",
+          "name": "BasicDataSourceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "data_source_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "data_source_ref01",
+                "srcdatavar": "data_source_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "data_source01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-data_source_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicExperimentFlow": {
+          "active": true,
+          "entity": "experiment",
+          "key$": "BasicExperimentFlow",
+          "kind": "basic",
+          "name": "BasicExperimentFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "experiment_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicLinkFlow": {
+          "active": true,
+          "entity": "link",
+          "key$": "BasicLinkFlow",
+          "kind": "basic",
+          "name": "BasicLinkFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "link_ref01",
+                "srcdatavar": "link_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "link01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-link_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSpaceFlow": {
+          "active": true,
+          "entity": "space",
+          "key$": "BasicSpaceFlow",
+          "kind": "basic",
+          "name": "BasicSpaceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "space_ref01",
+                "srcdatavar": "space_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-space_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicStoryFlow": {
+          "active": true,
+          "entity": "story",
+          "key$": "BasicStoryFlow",
+          "kind": "basic",
+          "name": "BasicStoryFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "story_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "story_ref01",
+                "srcdatavar": "story_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "story01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-story_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicTagFlow": {
+          "active": true,
+          "entity": "tag",
+          "key$": "BasicTagFlow",
+          "kind": "basic",
+          "name": "BasicTagFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "tag_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicTaxonomyFlow": {
+          "active": true,
+          "entity": "taxonomy",
+          "key$": "BasicTaxonomyFlow",
+          "kind": "basic",
+          "name": "BasicTaxonomyFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "taxonomy_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "taxonomy_ref01",
+                "srcdatavar": "taxonomy_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "taxonomy01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-taxonomy_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicTaxonomyTermFlow": {
+          "active": true,
+          "entity": "taxonomy_term",
+          "key$": "BasicTaxonomyTermFlow",
+          "kind": "basic",
+          "name": "BasicTaxonomyTermFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "taxonomy_term_ref01",
+                "srcdatavar": "taxonomy_term_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "taxonomy_term01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-taxonomy_term_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "email": "support@storyblok.com",
+          "name": "Storyblok Support",
+          "url": "https://support.storyblok.com"
+        },
+        "description": "CDN endpoints for your Storyblok space",
+        "license": {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+        },
+        "security": {
+          "in": "query",
+          "name": "token",
+          "prefix": "",
+          "scheme": "ApiKeyAuth",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "description": "European Union",
+            "url": "https://api.storyblok.com"
+          },
+          {
+            "description": "United States",
+            "url": "https://api-us.storyblok.com"
+          },
+          {
+            "description": "Canada",
+            "url": "https://api-ca.storyblok.com"
+          },
+          {
+            "description": "Australia",
+            "url": "https://api-au.storyblok.com"
+          },
+          {
+            "description": "China",
+            "url": "https://app.storyblokchina.cn"
+          }
+        ],
+        "summary": "CDN endpoints for your Storyblok space",
+        "title": "Storyblok Content Delivery API",
+        "version": "v2",
+        "website": "https://www.storyblok.com/docs/api/content-delivery/v2"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "storyblok-sdk",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "storyblok-sdk",
+  "origin": "voxgig-sdk"
+}

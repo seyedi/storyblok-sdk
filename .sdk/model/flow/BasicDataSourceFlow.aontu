@@ -1,0 +1,44 @@
+# BasicDataSourceFlow
+
+main: kit: flow: BasicDataSourceFlow:
+{
+  entity: "data_source",
+  kind: "basic",
+  name: "BasicDataSourceFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "data_source_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "data_source_ref01",
+        srcdatavar: "data_source_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "data_source01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-data_source_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDataSourceFlow"
+}

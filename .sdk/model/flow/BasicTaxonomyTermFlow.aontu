@@ -1,0 +1,32 @@
+# BasicTaxonomyTermFlow
+
+main: kit: flow: BasicTaxonomyTermFlow:
+{
+  entity: "taxonomy_term",
+  kind: "basic",
+  name: "BasicTaxonomyTermFlow",
+  step: [
+    {
+      i: {
+        ref: "taxonomy_term_ref01",
+        srcdatavar: "taxonomy_term_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "taxonomy_term01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-taxonomy_term_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTaxonomyTermFlow"
+}

@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "data_source_entry": {
+      "DATA_SOURCE_ENTRY00": {
+        "dimension_value": "s28",
+        "id": "DATA_SOURCE_ENTRY00",
+        "name": "s2a",
+        "value": "s2b"
+      },
+      "DATA_SOURCE_ENTRY01": {
+        "dimension_value": "s50",
+        "id": "DATA_SOURCE_ENTRY01",
+        "name": "s52",
+        "value": "s53"
+      },
+      "DATA_SOURCE_ENTRY02": {
+        "dimension_value": "s78",
+        "id": "DATA_SOURCE_ENTRY02",
+        "name": "s7a",
+        "value": "s7b"
+      }
+    }
+  },
+  "new": {
+    "data_source_entry": {
+      "data_source_entry_ref01": {
+        "dimension_value": "sa0",
+        "name": "sa2",
+        "value": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/datasource_entries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

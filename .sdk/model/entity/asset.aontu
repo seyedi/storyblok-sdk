@@ -1,0 +1,235 @@
+# Entity: asset
+
+main: kit: entity: asset: {
+
+  alias: field: {}
+
+  fields: {
+    alt: {
+      h: "Alt"
+      n: "alt"
+      r: true
+      sh: "Alt text for the asset (default language)."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    asset_folder_id: {
+      h: "Asset Folder Id"
+      n: "asset_folder_id"
+      r: true
+      sh: "Id of the folder that contains this asset."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    content_length: {
+      h: "Content Length"
+      n: "content_length"
+      r: true
+      sh: "The content length in bytes."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    content_type: {
+      h: "Content Type"
+      n: "content_type"
+      r: true
+      sh: "The asset’s MIME type."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    copyright: {
+      h: "Copyright"
+      n: "copyright"
+      r: true
+      sh: "Copyright text."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "Creation timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    expire_at: {
+      fo: "date-time"
+      h: "Expire At"
+      n: "expire_at"
+      r: true
+      sh: "Expiration timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    filename: {
+      h: "Filename"
+      n: "filename"
+      r: true
+      sh: "Full path of the asset, including the file name."
+      t: "`$STRING`"
+    }
+    focus: {
+      h: "Focus"
+      n: "focus"
+      r: true
+      sh: "Focus."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    is_private: {
+      h: "Is Private"
+      n: "is_private"
+      r: true
+      sh: "Defines if the asset should be inaccessible to the public."
+      t: "`$BOOLEAN`"
+    }
+    signed_url: {
+      h: "Signed Url"
+      n: "signed_url"
+      r: false
+      sh: "The signed URL for the asset."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Title of the asset."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    updated_at: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updated_at"
+      r: true
+      sh: "Latest update timestamp."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  name: "asset"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/assets/me"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "filename"
+                k: "query"
+                n: "filename"
+                or: "filename"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/assets/me"
+          q: {
+            "$action": "me"
+            exist: [
+              "filename"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "assets"
+            }
+            {
+              lit: "me"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.asset`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

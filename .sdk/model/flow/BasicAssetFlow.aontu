@@ -1,0 +1,28 @@
+# BasicAssetFlow
+
+main: kit: flow: BasicAssetFlow:
+{
+  entity: "asset",
+  kind: "basic",
+  name: "BasicAssetFlow",
+  step: [
+    {
+      i: {
+        ref: "asset_ref01",
+        srcdatavar: "asset_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-asset_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAssetFlow"
+}

@@ -1,0 +1,115 @@
+# Entity: space
+
+main: kit: entity: space: {
+
+  alias: field: {}
+
+  fields: {
+    domain: {
+      h: "Domain"
+      n: "domain"
+      r: true
+      sh: "Domain associated with the space (configured under **Visual Editor** → **Location**)."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Space ID."
+      t: "`$INTEGER`"
+    }
+    language_codes: {
+      h: "Language Codes"
+      n: "language_codes"
+      r: true
+      sh: "An array of language codes configured in the space."
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Space name."
+      t: "`$STRING`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: true
+      sh: "Cached version Unix timestamp."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "space"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/spaces/me"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "published"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/spaces/me"
+          q: {
+            "$action": "me"
+            exist: [
+              "token"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "spaces"
+            }
+            {
+              lit: "me"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.space`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

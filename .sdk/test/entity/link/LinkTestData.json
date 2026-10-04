@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "link": {
+      "LINK00": {
+        "alternates": [],
+        "created_at": "s97",
+        "id": "LINK00",
+        "is_folder": false,
+        "is_startpage": true,
+        "name": "s9b",
+        "parent_id": "PARENT01",
+        "path": "s9d",
+        "position": 158,
+        "published": false,
+        "published_at": "sa0",
+        "real_path": "sa1",
+        "slug": "sa2",
+        "updated_at": "sa3",
+        "uuid": "sa4"
+      },
+      "LINK01": {
+        "alternates": [],
+        "created_at": "s12d",
+        "id": "LINK01",
+        "is_folder": false,
+        "is_startpage": true,
+        "name": "s131",
+        "parent_id": "PARENT01",
+        "path": "s133",
+        "position": 308,
+        "published": false,
+        "published_at": "s136",
+        "real_path": "s137",
+        "slug": "s138",
+        "updated_at": "s139",
+        "uuid": "s13a"
+      },
+      "LINK02": {
+        "alternates": [],
+        "created_at": "s1c3",
+        "id": "LINK02",
+        "is_folder": false,
+        "is_startpage": true,
+        "name": "s1c7",
+        "parent_id": "PARENT01",
+        "path": "s1c9",
+        "position": 458,
+        "published": false,
+        "published_at": "s1cc",
+        "real_path": "s1cd",
+        "slug": "s1ce",
+        "updated_at": "s1cf",
+        "uuid": "s1d0"
+      }
+    }
+  },
+  "new": {
+    "link": {
+      "link_ref01": {
+        "alternates": [],
+        "created_at": "s259",
+        "is_folder": false,
+        "is_startpage": true,
+        "name": "s25d",
+        "parent_id": "PARENT01",
+        "path": "s25f",
+        "position": 608,
+        "published": false,
+        "published_at": "s262",
+        "real_path": "s263",
+        "slug": "s264",
+        "updated_at": "s265",
+        "uuid": "s266"
+      }
+    }
+  },
+  "requests": {
+    "GET /v2/cdn/links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v2/cdn/links/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

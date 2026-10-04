@@ -1,0 +1,22 @@
+# BasicExperimentFlow
+
+main: kit: flow: BasicExperimentFlow:
+{
+  entity: "experiment",
+  kind: "basic",
+  name: "BasicExperimentFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "experiment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicExperimentFlow"
+}

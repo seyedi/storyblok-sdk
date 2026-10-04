@@ -1,0 +1,12 @@
+# Entity Models
+
+@"./asset.aontu"
+@"./data_source.aontu"
+@"./data_source_entry.aontu"
+@"./experiment.aontu"
+@"./link.aontu"
+@"./space.aontu"
+@"./story.aontu"
+@"./tag.aontu"
+@"./taxonomy.aontu"
+@"./taxonomy_term.aontu"

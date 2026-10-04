@@ -1,0 +1,146 @@
+# Entity: data_source_entry
+
+main: kit: entity: data_source_entry: {
+
+  alias: field: {}
+
+  fields: {
+    dimension_value: {
+      h: "Dimension Value"
+      n: "dimension_value"
+      r: true
+      sh: "Entry value (requested dimension)."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Entry ID."
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Entry name."
+      t: "`$STRING`"
+    }
+    value: {
+      h: "Value"
+      n: "value"
+      r: true
+      sh: "Entry value (default dimension)."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "data_source_entry"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v2/cdn/datasource_entries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 1541863983
+                k: "query"
+                n: "cv"
+                or: "cv"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "labels"
+                k: "query"
+                n: "datasource"
+                or: "datasource"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en"
+                k: "query"
+                n: "dimension"
+                or: "dimension"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "ask9soUkv02QqbZgmZdeDAtt"
+                k: "query"
+                n: "token"
+                or: "token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v2/cdn/datasource_entries"
+          q: {
+            exist: [
+              "cv"
+              "datasource"
+              "dimension"
+              "page"
+              "per_page"
+              "token"
+            ]
+          }
+          s: [
+            {
+              lit: "v2"
+            }
+            {
+              lit: "cdn"
+            }
+            {
+              lit: "datasource_entries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.datasource_entries`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

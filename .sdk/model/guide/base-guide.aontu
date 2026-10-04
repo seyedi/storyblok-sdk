@@ -1,0 +1,97 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 10
+  metrics: count: path: 14
+  metrics: count: method: 14
+
+  entity: asset: {
+    path: "/v2/cdn/assets/me": {
+      action: "me": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.asset`")|top
+    }
+  }
+
+  entity: data_source: {
+    path: "/v2/cdn/datasources": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.datasources`")|top
+    }
+    path: "/v2/cdn/datasources/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: data_source_entry: {
+    path: "/v2/cdn/datasource_entries": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.datasource_entries`")|top
+    }
+  }
+
+  entity: experiment: {
+    path: "/v2/cdn/experiments": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.experiments`")|top
+    }
+  }
+
+  entity: link: {
+    path: "/v2/cdn/links": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.links`")|top
+    }
+    path: "/v2/cdn/links/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.link`")|top
+    }
+  }
+
+  entity: space: {
+    path: "/v2/cdn/spaces/me": {
+      action: "me": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.space`")|top
+    }
+  }
+
+  entity: story: {
+    path: "/v2/cdn/stories": {
+      op: list: method: *GET
+    }
+    path: "/v2/cdn/stories/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.story`")|top
+    }
+  }
+
+  entity: tag: {
+    path: "/v2/cdn/tags": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.tags`")|top
+    }
+  }
+
+  entity: taxonomy: {
+    path: "/v2/cdn/taxonomies": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.taxonomies`")|top
+    }
+    path: "/v2/cdn/taxonomies/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.taxonomy`")|top
+    }
+  }
+
+  entity: taxonomy_term: {
+    path: "/v2/cdn/taxonomy_terms/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.taxonomy_term`")|top
+    }
+  }
+
+}
